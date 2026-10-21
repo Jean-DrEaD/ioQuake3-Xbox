@@ -15,8 +15,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#ifndef STANDALONEOA
-
+#if !defined(STANDALONEOA) && !defined(STANDALONEALICE)
 /* Marks our launch data, so data from a dashboard or another title is ignored. */
 #define XBOX_LAUNCH_MAGIC "ioq3-xbox-launch"
 #define XBOX_LAUNCH_COMMANDS 512
@@ -45,7 +44,7 @@ static union
 
 void Sys_XboxAppendLaunchCommands(char *commandLine, int size)
 {
-#ifndef STANDALONEOA
+#if !defined(STANDALONEOA) && !defined(STANDALONEALICE)
 	unsigned long type;
 	const unsigned char *data;
 	char commands[XBOX_LAUNCH_COMMANDS];
@@ -80,7 +79,7 @@ void Sys_XboxAppendLaunchCommands(char *commandLine, int size)
 
 void Sys_XboxHandOverGame(const char *game)
 {
-#ifndef STANDALONEOA
+#if !defined(STANDALONEOA) && !defined(STANDALONEALICE)
 	char *commands = xboxLaunch.data.commands;
 	int size = sizeof(xboxLaunch.data.commands);
 	FILE *xbe;

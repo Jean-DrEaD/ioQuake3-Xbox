@@ -2330,7 +2330,7 @@ void Com_Init( char *commandLine ) {
 	// done early so bind command exists
 	CL_InitKeyCommands();
 
-#ifdef STANDALONEOA
+#if defined(STANDALONEOA) || defined(STANDALONEALICE)
 	com_standalone = Cvar_Get("com_standalone", "1", CVAR_ROM);
 #else
 	com_standalone = Cvar_Get("com_standalone", "0", CVAR_ROM);

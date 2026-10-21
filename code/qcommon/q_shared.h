@@ -39,6 +39,18 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //  #define LEGACY_PROTOCOL	// You probably don't need this for your standalone game
 //  #define PROTOCOL_HANDLER		"foobar"
   #define CONFIG_PREFIX			"fooconfig"
+#elif defined(STANDALONEALICE)
+  #define PRODUCT_NAME				"Alice"
+  #define BASEGAME					"base"
+  #define CLIENT_WINDOW_TITLE		"Alice"
+  #define CLIENT_WINDOW_MIN_TITLE	"alice"
+  #define HOMEPATH_NAME_UNIX_LEGACY	".alice"
+  #define HOMEPATH_NAME				"Alice"
+  #define GAMENAME_FOR_MASTER		"Alice"
+  #define CINEMATICS_LOGO		"idlogo.roq"
+  #define CINEMATICS_INTRO		"intro.roq"
+  #define LEGACY_PROTOCOL
+  #define CONFIG_PREFIX			"oaconfig"
 #elif defined(STANDALONEOA)
   #define PRODUCT_NAME				"OpenArena"
   #define BASEGAME					"baseoa"
