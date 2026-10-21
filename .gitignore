@@ -43,3 +43,4 @@ profile
 *.opensdf
 *.suo
 /.vs
+icons/*/icon*.png

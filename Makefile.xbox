@@ -10,6 +10,10 @@ ifeq ($(MAKECMDGOALS),ta)
 TA := 1
 endif
 
+ifeq ($(MAKECMDGOALS),alice)
+ALICE := 1
+endif
+
 ifeq ($(OA),1)
 FLAVOR = oa
 XBE_TITLE = "Open Arena"
@@ -18,6 +22,13 @@ FLAVOR_DEFINES = -DSTANDALONEOA
 XBOX_ICON = $(CURDIR)/icons/oa/TitleImage.xbx
 # Dashboards cache icons by Title ID; the cxbe default 0xFFFF0002 shows the q3 icon.
 XBOX_TITLEID = 4F410001
+else ifeq ($(ALICE),1)
+FLAVOR = alice
+XBE_TITLE = "American McGee's Alice"
+OUTPUT_DIR = build_xbox_alice
+FLAVOR_DEFINES = -DSTANDALONEALICE
+XBOX_ICON = $(CURDIR)/icons/alice/TitleImage.xbx
+XBOX_TITLEID = 414C0001
 else ifeq ($(TA),1)
 FLAVOR = ta
 XBE_TITLE = "ioQuake3 Team Arena"
@@ -272,7 +283,8 @@ $(OUTPUT_DIR)/.xbe_icon: $(OUTPUT_DIR)/default.xbe $(XBOX_ICON) \
 	@touch $@
 all: $(OUTPUT_DIR)/.xbe_icon
 
-.PHONY: oa ta
+.PHONY: oa ta alice
+alice: all
 oa: all
 ta: all
 
