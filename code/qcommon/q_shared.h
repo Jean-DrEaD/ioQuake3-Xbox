@@ -49,7 +49,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
   #define GAMENAME_FOR_MASTER		"Alice"
   #define CINEMATICS_LOGO		"idlogo.roq"
   #define CINEMATICS_INTRO		"intro.roq"
-  #define LEGACY_PROTOCOL
   #define CONFIG_PREFIX			"oaconfig"
 #elif defined(STANDALONEOA)
   #define PRODUCT_NAME				"OpenArena"
